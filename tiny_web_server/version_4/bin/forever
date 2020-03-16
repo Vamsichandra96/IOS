@@ -1,0 +1,5 @@
+i=1
+while :
+do
+  let "i+=1"
+done
