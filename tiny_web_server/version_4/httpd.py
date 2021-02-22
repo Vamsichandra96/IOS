@@ -121,6 +121,7 @@ class HTTPServer:
         stdout = sys.stdout.fileno() # usually 1
         pid = os.fork()
         if pid:
+            # parent
             os.close(cw)
             os.dup2(pr, stdin)
             st =""
@@ -128,6 +129,7 @@ class HTTPServer:
                 st+= line
             return st
         else:
+            # child
             os.close(pr)
             os.dup2(cw, stdout)
             args = [uri]

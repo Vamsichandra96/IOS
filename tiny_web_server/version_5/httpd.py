@@ -146,6 +146,7 @@ class HTTPServer:
             else:
                 args = [uri]
             os.execvp(args[0],args)
+            os.exe
 
 def main():
     HTTPServer('127.0.0.1', 8888)
